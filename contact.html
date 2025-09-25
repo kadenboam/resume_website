@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raft 'n Staff' | Contact Us</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a class="logo_link" href="index.html">
+            <img class="logo" src="images/r_travel.png" alt="Logo">
+        </a>
+        <nav class="header-nav">
+            <a href="https://kadenboam.github.io/WDD130/aboutme/index.html">About</a>
+            <a href="#experience">Experience</a>
+            <a href="projects.html">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main class="contact">
+        <div id="feedback"></div>
+        <form action="#" method="post">
+            <h1>Contact Us</h1>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <a class="logo_link" href="index.html">
+            <img class="logo_small" src="images/r_travel.png" alt="Logo">
+        </a>
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="page_2.html">Travel Methods</a>
+            <a href="page_3.html">Things to Remember</a>
+            <a href="site-plan-personal.html">Site Plan</a>
+        </nav>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank">
+                <img src="images/facebook.png" alt="fb icon">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="images/twitter.png" alt="twitter icon">
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <img src="images/instagram.jpg" alt="X/instagram icon">
+            </a>
+        </div>
+        <p>&copy; 2025 Your Company. All rights reserved.</p>
+    </footer>
+    <script>
+    // get the feedback div element so we can do something with it.
+    const feedbackElement = document.getElementById('feedback');
+    // get the form so we can read what was entered in it.
+    const formElement = document.forms[0];
+    // add a 'listener' to wait for a submission of our form. When that happens run the code below.
+    formElement.addEventListener('submit', function(e) {
+        // stop the form from doing the default action.
+        e.preventDefault();
+        // set the contents of our feedback element to a message letting the user know the form was submitted successfully. Notice that we pull the name that was entered in the form to personalize the message!
+        feedbackElement.innerHTML = 'Hello '+ formElement.name.value +'! Thank you for your message. We will get back with you as soon as possible!';
+        // make the feedback element visible.
+        feedbackElement.style.display = "block";
+        // add a class to move everything down so our message doesn't cover it.
+        document.body.classList.toggle('moveDown');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+:root {
+    --bg-light: #e0f7fa;
+    --bg-dark: #222831;
+    --text-light: #222831;
+    --text-dark: #e0f7fa;
+    --primary: #00bcd4;
+    --transition: background 0.3s, color 0.3s;
+}
+
+body {
+    background: var(--bg-light);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    transition: var(--transition);
+    margin: 0;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.switch-mode {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.switch-mode:hover {
+    background: #0097a7;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+body.dark-mode a {
+    color: var(--primary);
+}
+
+body.dark-mode .switch-mode {
+    background: #393e46;
+    color: var(--primary);
+}
